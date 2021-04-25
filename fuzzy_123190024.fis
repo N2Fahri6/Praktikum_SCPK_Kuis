@@ -1,0 +1,47 @@
+[System]
+Name='fuzzy_123190024'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='style'
+Range=[0 75]
+NumMFs=3
+MF1='buruk':'zmf',[20 40]
+MF2='cukup':'pimf',[20 40 40 60]
+MF3='baik':'smf',[40 60]
+
+[Input2]
+Name='mechanism_fault'
+Range=[0 100]
+NumMFs=3
+MF1='buruk':'zmf',[50 60]
+MF2='cukup':'pimf',[50 60 60 70]
+MF3='baik':'smf',[60 70]
+
+[Output1]
+Name='lolos'
+Range=[0 100]
+NumMFs=3
+MF1='rendah':'zmf',[50 60]
+MF2='sedang':'pimf',[50 60 60 70]
+MF3='tinggi':'smf',[60 70]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 2 (1) : 1
+1 3, 3 (1) : 1
+2 1, 1 (1) : 1
+2 2, 2 (1) : 1
+2 3, 3 (1) : 1
+3 1, 1 (1) : 1
+3 2, 2 (1) : 1
+3 3, 3 (1) : 1
